@@ -1,0 +1,215 @@
+/* || VARIABLES */
+
+:root {
+  --color-primary-cyan: hsl(179, 62%, 43%);
+  --color-primary-bright-yellow: hsl(71, 73%, 54%);
+
+  --color-neutral-light-gray: hsl(204, 43%, 93%);
+  --color-neutral-grayish-blue: hsl(218, 22%, 67%);
+  --color-neutral-white: hsl(0, 0%, 100%);
+  --color-neutral-blue-transparent: hsla(212, 100%, 34%, 0.1488);
+  --color-neutral-black-transparent: hsla(0, 0%, 0%, 0.097);
+
+  --body-font-family: "Karla", sans-serif;
+  --body-font-size: 1.6rem;
+}
+
+/* || RESET */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+/* || GENERAL STYLES */
+
+body {
+  padding: 3.2rem;
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-neutral-light-gray);
+}
+
+/* || GRID */
+
+.grid {
+  max-width: 635px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-radius: 0.8rem;
+  overflow: hidden;
+  box-shadow: 0 15px 30px 0 var(--color-neutral-blue-transparent);
+}
+
+.grid__title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--color-primary-cyan);
+  letter-spacing: -0.3px;
+  margin-bottom: 2.4rem;
+}
+
+.grid__highlight {
+  display: inline-block;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-primary-bright-yellow);
+  letter-spacing: -0.22px;
+  margin-bottom: 1.1rem;
+}
+
+.grid__subtitle {
+  font-size: 1.8rem;
+  color: var(--color-neutral-white);
+  letter-spacing: -0.22px;
+  margin-bottom: 1.8rem;
+}
+
+.grid__text {
+  color: var(--color-neutral-grayish-blue);
+  letter-spacing: -0.2px;
+  line-height: 2.6rem;
+}
+
+.grid__text-2 {
+  font-size: 1.4rem;
+  opacity: 0.75;
+  color: var(--color-neutral-white);
+  line-height: 2rem;
+  letter-spacing: -0.17px;
+}
+
+.grid__price {
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: var(--color-neutral-white);
+  letter-spacing: -0.4px;
+  margin-bottom: 0.4rem;
+
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+}
+
+.grid__price-time {
+  font-size: 1.6rem;
+  font-weight: 400;
+  opacity: 0.5;
+  letter-spacing: -0.2px;
+  line-height: 2.6rem;
+}
+
+.grid__description {
+  color: var(--color-neutral-white);
+  line-height: 2, 6rem;
+  letter-spacing: -0.2px;
+  margin-bottom: 2.6rem;
+}
+
+.grid__button {
+  background-color: var(--color-primary-bright-yellow);
+  color: var(--color-neutral-white);
+  display: block;
+  letter-spacing: -0.2px;
+  text-decoration: none;
+  padding: 1.5rem 0;
+  text-align: center;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 10px 0 var(--color-neutral-black-transparent);
+  font-weight: 700;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.grid__button:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.grid__item {
+  padding: 4rem;
+}
+
+.grid__item:first-child {
+  grid-column: span 2;
+  background-color: var(--color-neutral-white);
+}
+
+.grid__item:nth-child(2) {
+  background-color: var(--color-primary-cyan);
+}
+
+.grid__item:last-child {
+  background-color: var(--color-primary-cyan);
+  position: relative;
+}
+
+.grid__item:last-child::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #ffffff;
+  opacity: 0.1519;
+}
+
+/* || ATTRIBUTION */
+
+.attribution {
+  position: fixed;
+  bottom: 0;
+  font-size: 1.1rem;
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--color-neutral-white);
+  border-top-right-radius: 0.8rem;
+  border-top-left-radius: 0.8rem;
+}
+.attribution a {
+  color: var(--color-primary-cyan);
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 500px) {
+  .grid {
+    display: block;
+    margin: 7.2rem 0;
+  }
+
+  .grid__title {
+    font-size: 2rem;
+    letter-spacing: -0.25px;
+  }
+
+  .grid__highlight {
+    font-size: 1.5rem;
+    letter-spacing: -0.19px;
+    line-height: 2rem;
+  }
+
+  .grid__text {
+    font-size: 1.4rem;
+    letter-spacing: -0.17px;
+  }
+
+  .grid__text-2 {
+    font-size: 1.4rem;
+    letter-spacing: -0.17px;
+  }
+
+  .attribution {
+    display: none;
+  }
+}
